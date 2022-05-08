@@ -3,12 +3,6 @@
 // Display current date
 const currentTime = moment().format("dddd MMMM Do YYYY, h:mm");
 
-// display text
-//get help with centering date
-
-// variable to be added to
-// const empty = "";
-
 // loop to display times between 9am - 6pm
 const renderTimeBlocks = () => {
   for (let i = 9; i <= 18; i++) {
@@ -29,10 +23,6 @@ const renderTimeBlocks = () => {
   $("#display-planner").on("click", storeInput);
 };
 
-// create row elements to append
-
-//create button and store click to LS
-
 // Convert AM to PM
 function displayAmorPm(hour) {
   let b = "";
@@ -47,7 +37,6 @@ function displayAmorPm(hour) {
 }
 
 const storeInput = (event) => {
-  console.log(event.target);
   const target = $(event.target);
   //   localStorage.setItem();
   if (target.is("button")) {
@@ -61,7 +50,6 @@ const storeInput = (event) => {
 const updateColor = () => {
   var hour = new Date().getHours();
   for (var i = 9; i <= 18; i++) {
-    console.log(hour, i);
     if (hour == i) {
       $(`#inputText${i}`).css("background", "red");
     } else if (hour < i) {
@@ -73,11 +61,19 @@ setInterval(function () {
   updateColor();
 }, 1000);
 
+const getLocalStorage = (hour) => {
+  const userLocal = localStorage.getItem(hour);
+  if (true) {
+    var text = $(`input#inputText${hour}`).val(userLocal);
+  }
+};
+
 const onReady = () => {
   $("#display-date").text(currentTime);
   renderTimeBlocks();
   updateColor();
   setInterval();
+  getLocalStorage();
   // read from local storage - render saved passwords
 };
 
