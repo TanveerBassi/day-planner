@@ -16,3 +16,21 @@
   display: flex;
   justify-content: center;
 }
+
+.body {
+  background: red;
+}
+.btn {
+  height: 80px;
+}
+.row {
+  margin-bottom: 2px;
+}
+.hour {
+  border-top: 1px dotted rgb(19, 156, 235);
+  padding-top: 30px;
+}
+.inputcontent {
+  margin-left: -20px;
+  margin-right: -28px;
+}
