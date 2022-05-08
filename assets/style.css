@@ -1,0 +1,18 @@
+.inputText {
+  background: #eee;
+  height: 80px;
+  border: none;
+  border-radius: 0;
+  border-left: rgba(17, 119, 167, 0.467);
+  padding: 10px;
+}
+
+.display-4 {
+  display: flex;
+  justify-content: center;
+}
+
+.lead {
+  display: flex;
+  justify-content: center;
+}
