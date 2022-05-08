@@ -4,6 +4,7 @@ $(document).ready();
 const currentTime = moment().format("dddd MMMM Do YYYY, h:mm");
 
 // display text
+//get help with centering date
 $("#display-date").text(currentTime);
 
 // variable to be added to
