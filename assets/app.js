@@ -7,7 +7,7 @@ const currentTime = moment().format("dddd MMMM Do YYYY, h:mm");
 //get help with centering date
 
 // variable to be added to
-const empty = "";
+// const empty = "";
 
 // loop to display times between 9am - 6pm
 const renderTimeBlocks = () => {
@@ -58,13 +58,26 @@ const storeInput = (event) => {
 // Function to get from LS
 
 // Update color - using a loop
-const updateColor = () => {};
-// Interval to update color
-const setInterval = () => {};
+const updateColor = () => {
+  var hour = new Date().getHours();
+  for (var i = 9; i <= 18; i++) {
+    console.log(hour, i);
+    if (hour == i) {
+      $(`#inputText${i}`).css("background", "red");
+    } else if (hour < i) {
+      $(`#inputText${i}`).css("background", "lightblue");
+    }
+  }
+};
+setInterval(function () {
+  updateColor();
+}, 1000);
 
 const onReady = () => {
   $("#display-date").text(currentTime);
   renderTimeBlocks();
+  updateColor();
+  setInterval();
   // read from local storage - render saved passwords
 };
 
