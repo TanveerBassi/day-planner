@@ -1,5 +1,3 @@
-// wait until Jquery is ready
-
 // Display current date
 const currentTime = moment().format("dddd MMMM Do YYYY, h:mm");
 
@@ -18,9 +16,13 @@ const renderTimeBlocks = () => {
     row.append(col2);
     row.append(col3);
     $("#display-planner").append(row);
-    //get local storage
+    getlocalStorage(i);
   }
-  $("#display-planner").on("click", storeInput);
+  $("button.btn.btn-success").click(function (e) {
+    var id = $(this).data("id");
+    var inputText = $(this).parent().siblings().find("input").val();
+    localStorage.setItem(id, inputText);
+  });
 };
 
 // Convert AM to PM
@@ -36,15 +38,14 @@ function displayAmorPm(hour) {
   return hour + " " + b;
 }
 
-const storeInput = (event) => {
-  const target = $(event.target);
-  //   localStorage.setItem();
-  if (target.is("button")) {
-    //get user input then save to LS
-    // also save timeblock with LS to know which hour goes with which user input
+function getlocalStorage(hour) {
+  let inputval = localStorage.getItem(hour);
+  if (true) {
+    //  $("input").data(`input${hour}`)
+    var text = $(`input#inputText${hour}`).val(inputval);
+    console.log(text);
   }
-};
-// Function to get from LS
+}
 
 // Update color - using a loop
 const updateColor = () => {
