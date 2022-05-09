@@ -62,19 +62,11 @@ setInterval(function () {
   updateColor();
 }, 1000);
 
-const getLocalStorage = (hour) => {
-  const userLocal = localStorage.getItem(hour);
-  if (true) {
-    var text = $(`input#inputText${hour}`).val(userLocal);
-  }
-};
-
 const onReady = () => {
   $("#display-date").text(currentTime);
   renderTimeBlocks();
   updateColor();
   setInterval();
-  getLocalStorage();
   // read from local storage - render saved passwords
 };
 
